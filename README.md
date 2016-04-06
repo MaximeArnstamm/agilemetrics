@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/MaximeArnstamm/agilemetrics.svg?branch=master)](https://travis-ci.org/MaximeArnstamm/agilemetrics)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/7169d2da48bc4cb6be6c5615accb8325)](https://www.codacy.com/app/maxime-arnstamm/agilemetrics)
 
 # Agilemetrics
 

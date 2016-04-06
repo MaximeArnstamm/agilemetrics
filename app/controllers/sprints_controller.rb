@@ -1,6 +1,6 @@
 class SprintsController < ApplicationController
-  before_action :set_sprint, only: [:edit, :update, :destroy]
   before_action :set_project
+  before_action :set_sprint, only: [:edit, :update, :destroy]
 
   # GET /sprints
   def index
@@ -46,7 +46,7 @@ class SprintsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sprint
-      @sprint = Sprint.find(params[:id])
+      @sprint = @project.sprints.find(params[:id])
     end
 
     def set_project
