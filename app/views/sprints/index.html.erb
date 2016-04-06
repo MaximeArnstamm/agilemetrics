@@ -5,16 +5,33 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <td>Sprint Number</td>
+      <td>Start Date</td>
+      <td>End Date</td>
+      <td>Velocity Forecast</td>
+      <td>Velocity Real</td>
+      <td>Internal Bugs</td>
+      <td>External Bugs</td>
+      <td>Team Satisfaction</td>
+      <td>Client Satisfaction</td>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @sprints.each do |sprint| %>
       <tr>
-        <td><%= link_to 'Show', sprint %></td>
-        <td><%= link_to 'Edit', edit_sprint_path(sprint) %></td>
-        <td><%= link_to 'Destroy', sprint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= sprint.number %></td>
+        <td><%= sprint.startDate %></td>
+        <td><%= sprint.endDate %></td>
+        <td><%= sprint.velocityForecast %></td>
+        <td><%= sprint.velocityReal %></td>
+        <td><%= sprint.internalBugs %></td>
+        <td><%= sprint.externalBugs %></td>
+        <td><%= sprint.teamSatisfaction %></td>
+        <td><%= sprint.clientSatisfaction %></td>
+        <td><%= link_to 'Edit', [:edit, @project, sprint] %></td>
+        <td><%= link_to 'Destroy', [@project, sprint], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Sprint', new_sprint_path %>
+<%= link_to 'New Sprint', new_project_sprint_path %>

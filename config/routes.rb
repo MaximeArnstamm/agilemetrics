@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :sprints
+  resources :projects, only: [:show] do
+    resources :sprints, except: [:show]
+  end
 end

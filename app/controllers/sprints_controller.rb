@@ -1,13 +1,10 @@
 class SprintsController < ApplicationController
-  before_action :set_sprint, only: [:show, :edit, :update, :destroy]
+  before_action :set_sprint, only: [:edit, :update, :destroy]
+  before_action :set_project
 
   # GET /sprints
   def index
-    @sprints = Sprint.all
-  end
-
-  # GET /sprints/1
-  def show
+    @sprints = @project.sprints
   end
 
   # GET /sprints/new
@@ -22,9 +19,10 @@ class SprintsController < ApplicationController
   # POST /sprints
   def create
     @sprint = Sprint.new(sprint_params)
+    @project.sprints << @sprint
 
-    if @sprint.save
-      redirect_to @sprint, notice: 'Sprint was successfully created.'
+    if @project.save
+      redirect_to project_sprints_url, notice: 'Sprint was successfully created.'
     else
       render :new
     end
@@ -33,7 +31,7 @@ class SprintsController < ApplicationController
   # PATCH/PUT /sprints/1
   def update
     if @sprint.update(sprint_params)
-      redirect_to @sprint, notice: 'Sprint was successfully updated.'
+      redirect_to project_sprints_url, notice: 'Sprint was successfully updated.'
     else
       render :edit
     end
@@ -42,7 +40,7 @@ class SprintsController < ApplicationController
   # DELETE /sprints/1
   def destroy
     @sprint.destroy
-    redirect_to sprints_url, notice: 'Sprint was successfully destroyed.'
+    redirect_to project_sprints_url, notice: 'Sprint was successfully destroyed.'
   end
 
   private
@@ -51,8 +49,12 @@ class SprintsController < ApplicationController
       @sprint = Sprint.find(params[:id])
     end
 
+    def set_project
+      @project = Project.find(params[:project_id])
+    end
+
     # Only allow a trusted parameter "white list" through.
     def sprint_params
-      params[:sprint]
+      params.require(:sprint).permit!
     end
 end

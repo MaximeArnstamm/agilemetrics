@@ -1,7 +1,16 @@
-<%= simple_form_for(@sprint) do |f| %>
+<%= simple_form_for [@project, @sprint] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :number %>
+    <%= f.input :startDate %>
+    <%= f.input :endDate %>
+    <%= f.input :velocityForecast %>
+    <%= f.input :velocityReal %>
+    <%= f.input :internalBugs %>
+    <%= f.input :externalBugs %>
+    <%= f.input :teamSatisfaction %>
+    <%= f.input :clientSatisfaction %>
   </div>
 
   <div class="form-actions">
