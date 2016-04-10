@@ -31,7 +31,7 @@ gem "administrate", "~> 0.1.5"
 
 group :development do
   gem "quiet_assets"
-  gem "refills"
+  #gem "refills"
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
@@ -61,4 +61,5 @@ end
 
 group :staging, :production do
   gem "rack-timeout"
+  gem 'rails_12factor'
 end
