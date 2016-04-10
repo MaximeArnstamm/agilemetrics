@@ -7,10 +7,14 @@
   <%= f.input :endDate, as: :date, html5: true, input_html: { value: l(f.object.endDate) }  %>
   <%= f.input :velocityForecast, input_html: { autofocus:'autofocus'} %>
   <%= f.input :velocityReal %>
+  <%= f.input :velocityComment, as: :text, wrapper_html: { class: 'col-md-12 col-sm-12 col-xs-12 form-group has-feedback'} %>
   <%= f.input :internalBugs %>
   <%= f.input :externalBugs %>
+  <%= f.input :bugsComment, as: :text, wrapper_html: { class: 'col-md-12 col-sm-12 col-xs-12 form-group has-feedback'} %>
   <%= f.input :teamSatisfaction %>
   <%= f.input :clientSatisfaction %>
+  <%= f.input :satisfactionComment, as: :text, wrapper_html: { class: 'col-md-12 col-sm-12 col-xs-12 form-group has-feedback'} %>
+  <%= f.input :additionalNotes, as: :text, wrapper_html: { class: 'col-md-12 col-sm-12 col-xs-12 form-group has-feedback'} %>
 </div>
 
 <div class="form-actions">
