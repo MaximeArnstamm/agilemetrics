@@ -50,10 +50,10 @@ class SprintsController < ApplicationController
 
   def dashboard
     @sprints = @project.sprints.order(:number)
-    if !@sprints
+    if !@sprints || @sprints.count == 0
       redirect_to project_sprints_url
     end
-    
+
     @last_sprint = @sprints.last
     @bugs_data = @sprints.to_json(:only => [:number, :internalBugs, :externalBugs])
     @satisfaction_data = @sprints.to_json(:only => [:number, :teamSatisfaction, :clientSatisfaction])

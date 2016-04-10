@@ -2,7 +2,7 @@
   <div class="page-title">
     <div class="title_left">
       <h3><%= @project.name %>
-        : Dashboard Sprint
+        <br/> Dashboard Sprint
         <%= @last_sprint.number %></h3>
     </div>
   </div>
@@ -13,7 +13,7 @@
       <div class="left"></div>
       <div class="right">
         <span class="count_top">
-          <i class="fa fa-user"></i>
+          <i class="fa fa-bolt"></i>
           Vélocité constatée
         </span>
         <div class="count"><%= @last_sprint.velocityReal %></div>
@@ -26,7 +26,7 @@
       <div class="left"></div>
       <div class="right">
         <span class="count_top">
-          <i class="fa fa-clock-o"></i>
+          <i class="fa fa-bug"></i>
           Retours internes</span>
         <div class="count"><%= @last_sprint.internalBugs %></div>
         <span class="sparkline_internal" style="height: 160px;">
@@ -38,7 +38,7 @@
       <div class="left"></div>
       <div class="right">
         <span class="count_top">
-          <i class="fa fa-user"></i>
+          <i class="fa fa-bug"></i>
           Retours client</span>
         <div class="count"><%= @last_sprint.externalBugs %></div>
         <span class="sparkline_external" style="height: 160px;">
@@ -50,7 +50,7 @@
       <div class="left"></div>
       <div class="right">
         <span class="count_top">
-          <i class="fa fa-user"></i>
+          <i class="fa fa-smile-o"></i>
           Satisfaction équipe</span>
         <div class="count"><%= @last_sprint.teamSatisfaction %></div>
         <span class="sparkline_team" style="height: 160px;">
@@ -62,7 +62,7 @@
       <div class="left"></div>
       <div class="right">
         <span class="count_top">
-          <i class="fa fa-user"></i>
+          <i class="fa fa-smile-o"></i>
           Satisfaction client</span>
         <div class="count"><%= @last_sprint.clientSatisfaction %></div>
         <span class="sparkline_client" style="height: 160px;">

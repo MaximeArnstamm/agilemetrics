@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="ROBOTS" content="NOODP"/>
+    <meta name="viewport" content="initial-scale=1"/>
+    <%#
+    Configure default and controller-, and view-specific titles in
+    config/locales/en.yml. For more see:
+    https://github.com/calebthompson/title#usage
+    %>
+    <title><%= title %></title>
+    <%= stylesheet_link_tag :application, media: "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+<body style="background:#F7F7F7;">
+
+  <div class="">
+    <a class="hiddenanchor" id="toregister"></a>
+    <a class="hiddenanchor" id="tologin"></a>
+
+    <div id="wrapper">
+      <div id="login" class="animate form">
+        <section class="login_content">
+          <h1>Choisir un projet</h1>
+          <ul class="list-unstyled">
+            <% @projects.each do |project| %>
+            <li>
+              <a href='projects/<%=project.id%>/dashboard' class='btn btn-default' style="width:100px"><%=project.name%></a>
+            </li>
+            <% end %>
+          </ul>
+        <div class="clearfix"></div>
+        <div class="separator">
+          <!--
+          <form>
+            <h1>Login Form</h1>
+            <div>
+              <input type="text" class="form-control" placeholder="Username" required="" />
+            </div>
+            <div>
+              <input type="password" class="form-control" placeholder="Password" required="" />
+            </div>
+            <div>
+              <a class="btn btn-default submit" href="index.html">Log in</a>
+              <a class="reset_pass" href="#">Lost your password?</a>
+            </div>
+            <div class="clearfix"></div>
+            <div class="separator">
+          -->
+    <!-- form -->
+        </section>
+        <!-- content -->
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

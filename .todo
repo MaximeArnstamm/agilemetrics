@@ -1,12 +1,15 @@
 TODO:
-☐ changer home logo
+✔ changer home logo @done(2016-04-10 21:17)
 ☐ devise + login page + droits sur l'équipe
 ☐ multi equipe ?
+  ✔ sans login @done(2016-04-10 21:33)
+  ☐ avec login
 ☐ deployer sur heroku
-☐ ajouter commentaires dans modele
+✔ ajouter commentaires dans modele @done(2016-04-10 20:54)
   ✔ modele @done(2016-04-10 20:40)
   ✔ form @done(2016-04-10 20:43)
   ✔ dashboard @done(2016-04-10 20:53)
 ☐ i18n partout
 ☐ ws rest
 ☐ readme potable
+☐ active admin
