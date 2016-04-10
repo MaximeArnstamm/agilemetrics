@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+//= require moment
+//= require bootstrap-datetimepicker
+//= require pickers
+// You may include any languages (optional)
+//= require moment/fr
 //= require gentelella

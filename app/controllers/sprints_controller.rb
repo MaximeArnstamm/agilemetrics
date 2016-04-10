@@ -4,12 +4,17 @@ class SprintsController < ApplicationController
 
   # GET /sprints
   def index
-    @sprints = @project.sprints
+    @sprints = @project.sprints.order(:number)
   end
 
   # GET /sprints/new
   def new
-    @sprint = Sprint.new
+    last_sprint = @project.last_sprint
+    if last_sprint
+      @sprint = last_sprint.next_sprint
+    else
+      @sprint = Sprint.new
+    end
   end
 
   # GET /sprints/1/edit
@@ -41,6 +46,18 @@ class SprintsController < ApplicationController
   def destroy
     @sprint.destroy
     redirect_to project_sprints_url, notice: 'Sprint was successfully destroyed.'
+  end
+
+  def dashboard
+    @sprints = @project.sprints.order(:number)
+    if !@sprints
+      redirect_to project_sprints_url
+    end
+    
+    @last_sprint = @sprints.last
+    @bugs_data = @sprints.to_json(:only => [:number, :internalBugs, :externalBugs])
+    @satisfaction_data = @sprints.to_json(:only => [:number, :teamSatisfaction, :clientSatisfaction])
+    @velocity_data = @sprints.to_json(:only => [:endDate, :velocityForecast, :velocityReal])
   end
 
   private

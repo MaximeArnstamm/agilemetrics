@@ -1,19 +1,36 @@
-<%= simple_form_for [@project, @sprint] do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for [@project, @sprint], defaults: { wrapper_html: { class: 'col-md-6 col-sm-6 col-xs-12 form-group has-feedback' } } do |f| %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :number %>
-    <%= f.input :startDate %>
-    <%= f.input :endDate %>
-    <%= f.input :velocityForecast %>
-    <%= f.input :velocityReal %>
-    <%= f.input :internalBugs %>
-    <%= f.input :externalBugs %>
-    <%= f.input :teamSatisfaction %>
-    <%= f.input :clientSatisfaction %>
-  </div>
+<div class="form-inputs">
+  <%= f.input :number, wrapper_html: { class: 'col-md-12 col-sm-12 col-xs-12 form-group has-feedback'} %>
+  <%= f.input :startDate, as: :date, html5: true, input_html: { value: l(f.object.startDate) } %>
+  <%= f.input :endDate, as: :date, html5: true, input_html: { value: l(f.object.endDate) }  %>
+  <%= f.input :velocityForecast, input_html: { autofocus:'autofocus'} %>
+  <%= f.input :velocityReal %>
+  <%= f.input :internalBugs %>
+  <%= f.input :externalBugs %>
+  <%= f.input :teamSatisfaction %>
+  <%= f.input :clientSatisfaction %>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
+<% end %>
+
+<% content_for :javascript do %>
+<script type="text/javascript">
+  $(function () {
+    $('#sprint_startDate').datetimepicker({
+      locale: 'fr',
+      format: 'L',
+      daysOfWeekDisabled: [0, 6]
+    });
+    $('#sprint_endDate').datetimepicker({
+      locale: 'fr',
+      format: 'L',
+      daysOfWeekDisabled: [0, 6]
+    });
+  });
+</script>
 <% end %>

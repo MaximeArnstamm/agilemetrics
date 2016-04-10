@@ -1,0 +1,225 @@
+<div class="">
+  <div class="page-title">
+    <div class="title_left">
+      <h3><%= @project.name %>
+        : Dashboard Sprint
+        <%= @last_sprint.number %></h3>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="row tile_count">
+    <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+      <div class="left"></div>
+      <div class="right">
+        <span class="count_top">
+          <i class="fa fa-user"></i>
+          Vélocité constatée
+        </span>
+        <div class="count"><%= @last_sprint.velocityReal %></div>
+        <span class="sparkline_velocity" style="height: 160px;">
+          <canvas style="display: inline-block; width: 196px; height: 40px; vertical-align: top;" width="196" height="40"></canvas>
+        </span>
+      </div>
+    </div>
+    <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+      <div class="left"></div>
+      <div class="right">
+        <span class="count_top">
+          <i class="fa fa-clock-o"></i>
+          Retours internes</span>
+        <div class="count"><%= @last_sprint.internalBugs %></div>
+        <span class="sparkline_internal" style="height: 160px;">
+          <canvas style="display: inline-block; width: 196px; height: 40px; vertical-align: top;" width="196" height="40"></canvas>
+        </span>
+      </div>
+    </div>
+    <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+      <div class="left"></div>
+      <div class="right">
+        <span class="count_top">
+          <i class="fa fa-user"></i>
+          Retours client</span>
+        <div class="count"><%= @last_sprint.externalBugs %></div>
+        <span class="sparkline_external" style="height: 160px;">
+          <canvas style="display: inline-block; width: 196px; height: 40px; vertical-align: top;" width="196" height="40"></canvas>
+        </span>
+      </div>
+    </div>
+    <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+      <div class="left"></div>
+      <div class="right">
+        <span class="count_top">
+          <i class="fa fa-user"></i>
+          Satisfaction équipe</span>
+        <div class="count"><%= @last_sprint.teamSatisfaction %></div>
+        <span class="sparkline_team" style="height: 160px;">
+          <canvas style="display: inline-block; width: 196px; height: 40px; vertical-align: top;" width="196" height="40"></canvas>
+        </span>
+      </div>
+    </div>
+    <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+      <div class="left"></div>
+      <div class="right">
+        <span class="count_top">
+          <i class="fa fa-user"></i>
+          Satisfaction client</span>
+        <div class="count"><%= @last_sprint.clientSatisfaction %></div>
+        <span class="sparkline_client" style="height: 160px;">
+          <canvas style="display: inline-block; width: 196px; height: 40px; vertical-align: top;" width="196" height="40"></canvas>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <!-- fin header -->
+
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Vélocité
+        </h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <div id="graph_velocity" style="width:100%; height:280px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Retours
+        </h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <div id="graph_bugs" style="width:100%; height:280px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Satisfaction
+        </h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <div id="graph_satisfaction" style="width:100%; height:280px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+</div>
+
+<% content_for :javascript do %>
+<script type="text/javascript">
+  $('document').ready(function () {
+    $(".sparkline_velocity").sparkline(<%= @sprints.map(&:velocityReal) %>, {
+      type: 'line',
+      height: '40',
+      lineColor: '#26B99A',
+      fillColor: 'rgba(223, 223, 223, 0.57)',
+      lineWidth: 2,
+      spotColor: '#26B99A',
+      minSpotColor: '#26B99A'
+    });
+
+    $(".sparkline_internal").sparkline(<%= @sprints.map(&:internalBugs) %>, {
+      type: 'bar',
+      height: '40',
+      barWidth: 9,
+      barSpacing: 2,
+      barColor: '#26B99A'
+    });
+
+    $(".sparkline_external").sparkline(<%= @sprints.map(&:externalBugs) %>, {
+      type: 'bar',
+      height: '40',
+      barWidth: 9,
+      barSpacing: 2,
+      barColor: '#26B99A'
+    });
+
+    $(".sparkline_team").sparkline(<%= @sprints.map(&:teamSatisfaction) %>, {
+      type: 'line',
+      height: '40',
+      lineColor: '#26B99A',
+      fillColor: 'rgba(223, 223, 223, 0.57)',
+      lineWidth: 2,
+      spotColor: '#26B99A',
+      minSpotColor: '#26B99A'
+    });
+
+    $(".sparkline_client").sparkline(<%= @sprints.map(&:clientSatisfaction) %>, {
+      type: 'line',
+      height: '40',
+      lineColor: '#26B99A',
+      fillColor: 'rgba(223, 223, 223, 0.57)',
+      lineWidth: 2,
+      spotColor: '#26B99A',
+      minSpotColor: '#26B99A'
+    });
+
+    Morris.Bar({
+      element: 'graph_bugs',
+      data: <%= @bugs_data.html_safe %>,
+      xkey: 'number',
+      barColors: [
+        '#26B99A', '#34495E', '#ACADAC', '#3498DB'
+      ],
+      ykeys: [
+        'internalBugs', 'externalBugs'
+      ],
+      labels: [
+        'Internal Bugs', 'External Bugs'
+      ],
+      hideHover: 'auto',
+      xLabelAngle: 60
+    });
+
+    Morris.Bar({
+      element: 'graph_satisfaction',
+      data: <%= @satisfaction_data.html_safe %>,
+      xkey: 'number',
+      barColors: [
+        '#26B99A', '#34495E', '#ACADAC', '#3498DB'
+      ],
+      ykeys: [
+        'teamSatisfaction', 'clientSatisfaction'
+      ],
+      labels: [
+        'Team Satisfaction', 'Client Satisfaction'
+      ],
+      hideHover: 'auto',
+      xLabelAngle: 60
+    });
+
+    Morris.Line({
+      element: 'graph_velocity',
+      xkey: 'endDate',
+      ykeys: [
+        'velocityForecast', 'velocityReal'
+      ],
+      labels: [
+        'Prévue', 'Constatée'
+      ],
+      hideHover: 'auto',
+      smooth: 'false',
+      lineColors: [
+        '#ACADAC', '#34495E', '#ACADAC', '#3498DB'
+      ],
+      data: <%= @velocity_data.html_safe %>
+    });
+  });
+</script>
+<% end %>

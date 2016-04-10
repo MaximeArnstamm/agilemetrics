@@ -8,7 +8,7 @@ gem "autoprefixer-rails"
 gem "coffee-rails", "~> 4.1.0"
 gem "delayed_job_active_record"
 gem "flutie"
-gem "high_voltage"
+#gem "high_voltage"
 gem "jquery-rails"
 #gem "neat", "~> 1.7.0"
 gem "newrelic_rpm", ">= 3.9.8"
@@ -24,6 +24,8 @@ gem "title"
 gem "uglifier"
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+gem 'momentjs-rails', '~> 2.9', :github => 'derekprior/momentjs-rails' 
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
 group :development do
   gem "quiet_assets"
