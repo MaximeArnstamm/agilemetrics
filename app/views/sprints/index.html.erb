@@ -1,42 +1,65 @@
-<p id="notice"><%= notice %></p>
+<div class="">
+  <div class="page-title">
+    <div class="title_left">
+      <h3>Plain Page</h3>
+    </div>
+  </div>
+  <div class="clearfix"></div>
 
-<h1>Listing Sprints</h1>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel" style="height:600px;">
+        <div class="x_title">
+          <h2>Plain Page</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
 
-<table>
-  <thead>
-    <tr>
-      <td>Sprint Number</td>
-      <td>Start Date</td>
-      <td>End Date</td>
-      <td>Velocity Forecast</td>
-      <td>Velocity Real</td>
-      <td>Internal Bugs</td>
-      <td>External Bugs</td>
-      <td>Team Satisfaction</td>
-      <td>Client Satisfaction</td>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+          <p id="notice"><%= notice %></p>
 
-  <tbody>
-    <% @sprints.each do |sprint| %>
-      <tr>
-        <td><%= sprint.number %></td>
-        <td><%= sprint.startDate %></td>
-        <td><%= sprint.endDate %></td>
-        <td><%= sprint.velocityForecast %></td>
-        <td><%= sprint.velocityReal %></td>
-        <td><%= sprint.internalBugs %></td>
-        <td><%= sprint.externalBugs %></td>
-        <td><%= sprint.teamSatisfaction %></td>
-        <td><%= sprint.clientSatisfaction %></td>
-        <td><%= link_to 'Edit', [:edit, @project, sprint] %></td>
-        <td><%= link_to 'Destroy', [@project, sprint], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <h1>Listing Sprints</h1>
 
-<br>
+          <table>
+            <thead>
+              <tr>
+                <td>Sprint Number</td>
+                <td>Start Date</td>
+                <td>End Date</td>
+                <td>Velocity Forecast</td>
+                <td>Velocity Real</td>
+                <td>Internal Bugs</td>
+                <td>External Bugs</td>
+                <td>Team Satisfaction</td>
+                <td>Client Satisfaction</td>
+                <th colspan="2"></th>
+              </tr>
+            </thead>
 
-<%= link_to 'New Sprint', new_project_sprint_path %>
+            <tbody>
+              <% @sprints.each do |sprint| %>
+              <tr>
+                <td><%= sprint.number %></td>
+                <td><%= sprint.startDate %></td>
+                <td><%= sprint.endDate %></td>
+                <td><%= sprint.velocityForecast %></td>
+                <td><%= sprint.velocityReal %></td>
+                <td><%= sprint.internalBugs %></td>
+                <td><%= sprint.externalBugs %></td>
+                <td><%= sprint.teamSatisfaction %></td>
+                <td><%= sprint.clientSatisfaction %></td>
+                <td><%= link_to 'Edit', [:edit, @project, sprint] %></td>
+                <td><%= link_to 'Destroy', [@project, sprint], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+          <br>
+
+          <%= link_to 'New Sprint', new_project_sprint_path %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,13 +4,13 @@ ruby "2.3.0"
 
 # gem "airbrake"
 gem "autoprefixer-rails"
-gem "bourbon", "~> 4.2.0"
+#gem "bourbon", "~> 4.2.0"
 gem "coffee-rails", "~> 4.1.0"
 gem "delayed_job_active_record"
 gem "flutie"
 gem "high_voltage"
 gem "jquery-rails"
-gem "neat", "~> 1.7.0"
+#gem "neat", "~> 1.7.0"
 gem "newrelic_rpm", ">= 3.9.8"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"
@@ -22,6 +22,8 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
 gem "uglifier"
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 
 group :development do
   gem "quiet_assets"
