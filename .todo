@@ -17,6 +17,7 @@ TODO:
 ✔ test sous chrome @done(2016-04-11 19:04)
   ✔ date pickers @done(2016-04-11 19:04)
 ☐ valeurs par défaut pour pas casser les graphiques ?
+  ✔ valeurs obligatoires dans le formulaire @done(2016-04-11 20:12)
 ✔ taille du menu des projets @done(2016-04-11 19:05)
 ☐ date du sprint dans dashboard ?
 ☐ limite nombre de sprints dans dashboard : 10 ou 20 ?

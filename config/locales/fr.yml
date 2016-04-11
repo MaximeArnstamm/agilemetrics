@@ -17,3 +17,9 @@ fr:
 
   titles:
     application: Agilemetrics
+
+  activerecord:
+        errors:
+            models:
+                sprint:
+                  blank: "Champs obligatoire"
