@@ -3,8 +3,8 @@
 
 <div class="form-inputs">
   <%= f.input :number, wrapper_html: { class: 'col-md-12 col-sm-12 col-xs-12 form-group has-feedback'} %>
-  <%= f.input :startDate, as: :date, html5: true, input_html: { value: l(f.object.startDate) } %>
-  <%= f.input :endDate, as: :date, html5: true, input_html: { value: l(f.object.endDate) }  %>
+  <%= f.input :startDate, as: :string, input_html: { value: l(f.object.startDate) } %>
+  <%= f.input :endDate, as: :string, input_html: { value: l(f.object.endDate) }  %>
   <%= f.input :velocityForecast, input_html: { autofocus:'autofocus'} %>
   <%= f.input :velocityReal %>
   <%= f.input :velocityComment, as: :text, wrapper_html: { class: 'col-md-12 col-sm-12 col-xs-12 form-group has-feedback'} %>
