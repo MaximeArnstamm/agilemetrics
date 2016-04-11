@@ -4,7 +4,7 @@ TODO:
 ☐ multi equipe ?
   ✔ sans login @done(2016-04-10 21:33)
   ☐ avec login
-☐ deployer sur heroku
+✔ deployer sur heroku @done(2016-04-11 18:06)
 ✔ ajouter commentaires dans modele @done(2016-04-10 20:54)
   ✔ modele @done(2016-04-10 20:40)
   ✔ form @done(2016-04-10 20:43)
@@ -12,4 +12,11 @@ TODO:
 ☐ i18n partout
 ☐ ws rest
 ☐ readme potable
-☐ active admin
+✔ active admin @done(2016-04-11 18:06)
+✔ echelle sur sparkline @done(2016-04-11 18:30)
+☐ test sous chrome
+  ☐ date pickers
+☐ valeurs par défaut pour pas casser les graphiques ?
+☐ taille du menu des projets
+☐ date du sprint dans dashboard ?
+☐ limite nombre de sprints dans dashboard : 10 ou 20 ?

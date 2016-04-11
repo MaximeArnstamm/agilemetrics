@@ -180,11 +180,14 @@
     $(".sparkline_velocity").sparkline(<%= @sprints.map(&:velocityReal) %>, {
       type: 'line',
       height: '40',
+      width: '80%',
       lineColor: '#26B99A',
       fillColor: 'rgba(223, 223, 223, 0.57)',
       lineWidth: 2,
       spotColor: '#26B99A',
-      minSpotColor: '#26B99A'
+      minSpotColor: '#26B99A',
+      chartRangeMin: 0,
+      chartRangeMinX: 0
     });
 
     $(".sparkline_internal").sparkline(<%= @sprints.map(&:internalBugs) %>, {
@@ -192,7 +195,9 @@
       height: '40',
       barWidth: 9,
       barSpacing: 2,
-      barColor: '#26B99A'
+      barColor: '#26B99A',
+      chartRangeMin: 0,
+      chartRangeMinX: 0
     });
 
     $(".sparkline_external").sparkline(<%= @sprints.map(&:externalBugs) %>, {
@@ -200,27 +205,35 @@
       height: '40',
       barWidth: 9,
       barSpacing: 2,
-      barColor: '#26B99A'
+      barColor: '#26B99A',
+      chartRangeMin: 0,
+      chartRangeMinX: 0
     });
 
     $(".sparkline_team").sparkline(<%= @sprints.map(&:teamSatisfaction) %>, {
       type: 'line',
       height: '40',
+      width: '80%',
       lineColor: '#26B99A',
       fillColor: 'rgba(223, 223, 223, 0.57)',
       lineWidth: 2,
       spotColor: '#26B99A',
-      minSpotColor: '#26B99A'
+      minSpotColor: '#26B99A',
+      chartRangeMin: 0,
+      chartRangeMinX: 0
     });
 
     $(".sparkline_client").sparkline(<%= @sprints.map(&:clientSatisfaction) %>, {
       type: 'line',
       height: '40',
+      width: '80%',
       lineColor: '#26B99A',
       fillColor: 'rgba(223, 223, 223, 0.57)',
       lineWidth: 2,
       spotColor: '#26B99A',
-      minSpotColor: '#26B99A'
+      minSpotColor: '#26B99A',
+      chartRangeMin: 0,
+      chartRangeMinX: 0
     });
 
     Morris.Bar({
