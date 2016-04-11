@@ -14,6 +14,8 @@ class SprintsController < ApplicationController
       @sprint = last_sprint.next_sprint
     else
       @sprint = Sprint.new
+      @sprint.startDate = DateTime.now.to_date
+      @sprint.endDate = DateTime.now.to_date
     end
   end
 

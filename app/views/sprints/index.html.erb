@@ -37,7 +37,7 @@
               <% @sprints.each do |sprint| %>
               <tr>
                 <td><%= sprint.number %></td>
-                <td><%= sprint.startDate.strftime("%d/%m/%Y") %></td>
+                <td><%= l(sprint.startDate) %></td>
                 <td><%= l(sprint.endDate) %></td>
                 <td><%= sprint.velocityForecast %></td>
                 <td><%= sprint.velocityReal %></td>
