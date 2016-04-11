@@ -27,7 +27,8 @@
           <ul class="list-unstyled">
             <% @projects.each do |project| %>
             <li>
-              <a href='projects/<%=project.id%>/dashboard' class='btn btn-default' style="width:100px"><%=project.name%></a>
+              <a href='projects/<%=project.id%>/dashboard'
+                class='btn btn-default' style="width:300px"><%=project.name%></a>
             </li>
             <% end %>
           </ul>

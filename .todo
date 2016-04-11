@@ -14,9 +14,9 @@ TODO:
 ☐ readme potable
 ✔ active admin @done(2016-04-11 18:06)
 ✔ echelle sur sparkline @done(2016-04-11 18:30)
-☐ test sous chrome
-  ☐ date pickers
+✔ test sous chrome @done(2016-04-11 19:04)
+  ✔ date pickers @done(2016-04-11 19:04)
 ☐ valeurs par défaut pour pas casser les graphiques ?
-☐ taille du menu des projets
+✔ taille du menu des projets @done(2016-04-11 19:05)
 ☐ date du sprint dans dashboard ?
 ☐ limite nombre de sprints dans dashboard : 10 ou 20 ?
