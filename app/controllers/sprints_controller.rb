@@ -5,6 +5,11 @@ class SprintsController < ApplicationController
   # GET /sprints
   def index
     @sprints = @project.sprints.order(:number)
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @sprints }
+    end
   end
 
   # GET /sprints/new
