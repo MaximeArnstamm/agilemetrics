@@ -13,9 +13,21 @@ class Sprint < ActiveRecord::Base
   def next_sprint
     sprint = Sprint.new
     sprint.number = self.number + 1
-    sprint.startDate = self.endDate + 1
+    sprint.startDate = next_week_day(self.endDate)
     sprint.endDate = sprint.startDate + 13
 
     sprint
   end
+
+  def next_week_day(date)
+    ndate = date + 1
+    if ndate.wday == 6 # saturday
+      ndate += 1
+    end
+    if ndate.wday == 0 # sunday
+      ndate += 1
+    end
+    ndate
+  end
+
 end
