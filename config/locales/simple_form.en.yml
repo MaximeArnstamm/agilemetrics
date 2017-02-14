@@ -10,8 +10,21 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
-    # Examples
-    # labels:
+    labels:
+      sprint:
+        number: 'Number'
+        startDate: 'Start date'
+        endDate: 'End date'
+        velocityForecast: 'Velocity forecast'
+        velocityReal: 'Velocity real'
+        velocityComment: 'Comment'
+        internalBugs: 'Internal bugs'
+        externalBugs: 'External bugs'
+        bugsComment: 'Comment'
+        teamSatisfaction: 'Team satisfaction'
+        clientSatisfaction: 'Client satisfaction'
+        satisfactionComment: 'Comment'
+        additionalNotes: 'Additional notes'
     #   defaults:
     #     password: 'Password'
     #   user:
@@ -19,7 +32,7 @@ en:
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'
-    # hints:
+    #  hints:
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'

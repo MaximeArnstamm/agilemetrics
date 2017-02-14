@@ -20,15 +20,15 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <td>Sprint Number</td>
-                <td>Start Date</td>
-                <td>End Date</td>
-                <td>Velocity Forecast</td>
-                <td>Velocity Real</td>
-                <td>Internal Bugs</td>
-                <td>External Bugs</td>
-                <td>Team Satisfaction</td>
-                <td>Client Satisfaction</td>
+                <td>Numéro de sprint</td>
+                <td>Date de début</td>
+                <td>Date de fin</td>
+                <td>Vélocité prévue</td>
+                <td>Vélocité constatée</td>
+                <td>Nombre de retours internes</td>
+                <td>Nombre de retours externes</td>
+                <td>Satisfaction de l'équipe</td>
+                <td>Satisfaction du client</td>
                 <th colspan="2"></th>
               </tr>
             </thead>
@@ -45,8 +45,8 @@
                 <td><%= sprint.externalBugs %></td>
                 <td><%= sprint.teamSatisfaction %></td>
                 <td><%= sprint.clientSatisfaction %></td>
-                <td><%= link_to 'Edit', [:edit, @project, sprint] %></td>
-                <td><%= link_to 'Destroy', [@project, sprint], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Editer', [:edit, @project, sprint] %></td>
+                <td><%= link_to 'Supprimer', [@project, sprint], method: :delete, data: { confirm: 'Sûr ?' } %></td>
               </tr>
               <% end %>
             </tbody>

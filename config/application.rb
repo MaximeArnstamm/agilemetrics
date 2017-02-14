@@ -24,7 +24,6 @@ module Agilemetrics
     end
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.active_record.raise_in_transactional_callbacks = true
-    config.active_job.queue_adapter = :delayed_job
     config.assets.precompile += %w(gentelella.css gentelella.js gentelella/*)
   end
 end

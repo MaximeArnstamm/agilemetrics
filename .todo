@@ -1,4 +1,9 @@
 TODO:
+  ☐ cleaner les labels
+  ☐ métriques à revoir ?
+    ☐ vélocité (attendue constatée), retours internes, retours externes, statisfaction ?
+  ☐ recup velocités par rest jira 
+
 ✔ changer home logo @done(2016-04-10 21:17)
 ☐ devise + login page + droits sur l'équipe
 ☐ multi equipe ?
